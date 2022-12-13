@@ -1,13 +1,16 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 
+
 def loginWindow():
+
     Login()
+
 
 class Login():
 
     def __init__(self, master):
-        
+
         self.root = master
         self.root.config()
         self.root.title("Login Page")
@@ -15,13 +18,14 @@ class Login():
 
         initface(self.root)
 
+
 class initface() :
 
     def __init__(self, master):
 
         self.root = master
         # self.root.config(bg="#98AFC7")
-        img = Image.open("../../assets/imgs/Login.jpg")
+        img = Image.open("../../Login.jpg")
         tk_img = ImageTk.PhotoImage(img)
 
         canvas = tk.Canvas(self.root, width=960, height=540)
@@ -29,3 +33,7 @@ class initface() :
         canvas.pack()
 
         self.initface = tk.Frame(self.root)
+
+    def change(self):
+
+        self.initface.destroy()
