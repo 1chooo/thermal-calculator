@@ -16,6 +16,7 @@
 * Canvas
   * [Canvas 畫布](https://steam.oxxostudio.tw/category/python/tkinter/canvas.html)
   * [Python Tkinter 画布（Canvas）](https://www.runoob.com/python/python-tk-canvas.html)
+  * [Photoimage 顯示圖片](https://steam.oxxostudio.tw/category/python/tkinter/photoimage.html)
 * Cursors
   * [Tkinter 8.5 reference: a GUI for Python](https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/cursors.html)
 * Entry
