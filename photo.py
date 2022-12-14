@@ -6,6 +6,7 @@ from PIL import Image, ImageTk
 class BaseDesk:
 
     def __init__(self, master):
+
         self.root = master
         self.root.config()
         self.root.title("Login Page")
@@ -17,6 +18,7 @@ class BaseDesk:
 class LoginFrame:
 
     def __init__(self, master):
+
         self.root = master
         self.root.config(bg='#98AFC7')
         self.root.title("Login Page")
@@ -70,7 +72,9 @@ class LoginFrame:
         self.pwd_entry.config(bg="#EFEFEF", fg="black")
         self.pwd_entry.place(x=580, y=377, width=270.0, height=30)
 
+
     def test(self):
+
         if self.username_entry.get() != '':
             print(self.username_entry.get())
             print(self.pwd_entry.get())
@@ -79,6 +83,7 @@ class LoginFrame:
 
 
 if __name__ == '__main__':
+
     root = tk.Tk()
     BaseDesk(root)
 
