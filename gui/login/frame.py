@@ -120,7 +120,7 @@ class LoginFrame:
             height=30,
         )
 
-    def loginFunc(self):
+    def loginFunc(self) -> None:
 
         if self.username_entry.get() != '':
             print("Username:", self.username_entry.get())

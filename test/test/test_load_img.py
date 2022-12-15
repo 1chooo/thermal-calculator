@@ -27,7 +27,7 @@ class InitialFace():
 
         canvas = tkinter.Canvas(master)
         canvas.grid(row=0, column=0)
-        img = Image.open('./assets/imgs/Login.png').resize((960, 540))
+        img = Image.open('../../assets/imgs/Login.png').resize((960, 540))
         photo = tkinter.PhotoImage(img)
         photo_list.append(photo)
         canvas.create_image(0, 0, image=photo)

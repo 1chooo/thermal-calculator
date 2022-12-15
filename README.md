@@ -21,5 +21,7 @@
   * [Tkinter 8.5 reference: a GUI for Python](https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/cursors.html)
 * Entry
   * [Python tkinter Entry 文字輸入框用法與範例](https://shengyu7697.github.io/python-tkinter-entry/)
+  * [Managing background colour of Tkinter Entry based on number of chars entered by user using config()
+](https://www.youtube.com/watch?v=KV3SPTt1WWs)
 
 https://yhhuang1966.blogspot.com/2020/01/python-gui-tkinter.html

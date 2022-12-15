@@ -2,12 +2,11 @@
 This test is successfully to call the package gui
 """
 
-import tkinter as tk
-
+from tkinter import *
 from gui.BaseDesk import base
 
 
-root = tk.Tk()
+root = Tk()
 
 if __name__ == "__main__":
 

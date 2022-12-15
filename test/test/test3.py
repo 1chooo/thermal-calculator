@@ -19,7 +19,7 @@ class LoginBase(tk.Tk):
         # btn.place(relx=10, rely=0.5)
         # btn.pack()
 
-        self.python_image = tk.PhotoImage(file='./assets/imgs/Login.png')
+        self.python_image = tk.PhotoImage(file='../../assets/imgs/Login.png')
         ttk.Label(self, image=self.python_image).pack()
 
         btn = tk.Button(self, text="change", command=self.change)

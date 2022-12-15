@@ -25,7 +25,7 @@ class InitialFrame:
         self.canvas = Canvas(self.initial_frame, width=350)
         self.canvas.pack(side=TOP, anchor=NW, padx=10, pady=10)
 
-        self.img = Image.open('./assets/imgs/Login.jpg')
+        self.img = Image.open('../assets/imgs/Login.jpg')
         self.tk_img = ImageTk.PhotoImage(self.img)
         self.canvas.create_image(30, 30, anchor="center", image=self.tk_img)
 

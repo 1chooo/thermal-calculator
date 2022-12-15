@@ -5,7 +5,7 @@ class Test:
     def __init__(self, master):
         canvas = tkinter.Canvas(master)
         canvas.grid(row=0, column=0)
-        photo = tkinter.PhotoImage(file='./assets/imgs/Login.png')
+        photo = tkinter.PhotoImage(file='../../assets/imgs/Login.png')
         l.append(photo)
         canvas.create_image(0, 0, image=photo)
 
