@@ -23,5 +23,7 @@
   * [Python tkinter Entry 文字輸入框用法與範例](https://shengyu7697.github.io/python-tkinter-entry/)
   * [Managing background colour of Tkinter Entry based on number of chars entered by user using config()
 ](https://www.youtube.com/watch?v=KV3SPTt1WWs)
+* Menu
+  * [Tkinter Menu](https://www.pythontutorial.net/tkinter/tkinter-menu/)
 
 https://yhhuang1966.blogspot.com/2020/01/python-gui-tkinter.html

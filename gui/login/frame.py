@@ -1,18 +1,53 @@
+"""
+This includes the class to build
+the login interface and the login function
+to detect the username and the admin.
+"""
+
+
 from tkinter import *
 from PIL import Image, ImageTk
+from gui.Dashboard.dashboard import Dashboard
 
 
 class LoginFrame:
 
     def __init__(self, master):
 
+        self.admin_username = "admin"
+        self.admin_pwd = "admin"
+
+        self.caution = None
         self.root = master
         self.root.config(bg='#98AFC7')
         self.root.title("Login Page")
         self.root.geometry("960x540")
 
         """
-        Create the lower Frame in the window
+            Build the Menu Bar
+            Wish List: 
+                1. Switch to the calculator
+                2. Switch to the about us
+                3. Switch to the background
+                4. Switch to the guide
+                5. log out
+            The problem may meet is the link of the objects!!!
+        """
+        # self.menu = Menu(self.root)
+        # self.menu_bar = Menu(self.menu)
+        # # self.menu_bar.add_command(label='Open')
+        # # self.menu_bar.add_command(label='Save')
+        # self.menu_bar.add_command(
+        #     label='Exit',
+        #     command=root.destroy,
+        # )
+        # self.menu.add_cascade(label='File', menu=self.menu_bar)
+        #
+        # # with the config() then we can add to the window
+        # self.root.config(menu=self.menu)
+
+        """
+            Create the lower Frame in the window
         """
         self.loginFrame = Frame(
             self.root,
@@ -26,7 +61,7 @@ class LoginFrame:
         )
 
         """
-        Add the canvas layer on the lower Frame
+            Add the canvas layer on the lower Frame
         """
         self.canvas = Canvas(
             self.loginFrame,
@@ -43,10 +78,12 @@ class LoginFrame:
         )
 
         """
-        add image to the background
+            Add image to the background
         """
         self.bg_img = Image.open('./assets/imgs/Login.jpg')
+        print(self.bg_img)
         self.tk_bg_img = ImageTk.PhotoImage(self.bg_img)
+        print(self.tk_bg_img)
         self.canvas.create_image(
             480,
             270,
@@ -55,14 +92,14 @@ class LoginFrame:
         )
 
         """
-        Build the login button
+            Build the login button
         """
         self.btn_img = Image.open('./assets/imgs/Login_btn.png')
         self.tk_btn_img = ImageTk.PhotoImage(self.btn_img)
         self.btn = Button(
             self.loginFrame,
             # text='Login',
-            command=self.loginFunc,
+            command=self.__loginFunc,
             image=self.tk_btn_img,
             bd=0,
             cursor='mouse',
@@ -76,7 +113,7 @@ class LoginFrame:
         )
 
         """
-        Build the username input entry
+            Build the username input entry
         """
         self.entry_img = Image.open('./assets/imgs/username_entry.png')
         self.tk_entry_img = ImageTk.PhotoImage(self.entry_img)
@@ -88,7 +125,7 @@ class LoginFrame:
         )
 
         """
-        Build the password input entry
+            Build the password input entry
         """
         self.username_entry = Entry(
             self.canvas,
@@ -120,10 +157,49 @@ class LoginFrame:
             height=30,
         )
 
-    def loginFunc(self) -> None:
+    def __loginFunc(self,):
+
+        print("The login button has been clicked!!!")
 
         if self.username_entry.get() != '':
-            print("Username:", self.username_entry.get())
-            print("Password:", self.pwd_entry.get())
 
-        print("Login Successfully!!!")
+            if self.username_entry.get() == "admin" and self.pwd_entry.get() == "admin":
+
+                print("Username:", self.username_entry.get())
+                print("Password:", self.pwd_entry.get())
+                print("Login Successfully!!!")
+
+                # self.loginFrame.destroy()
+                Dashboard(self.root)
+
+            else:
+
+                print("Username:", self.username_entry.get())
+                print("Password:", self.pwd_entry.get())
+
+                print("This user are not in our data base!!!")
+
+                """
+                    Wish List:
+                    Maybe we can add the caution to the user.
+                """
+                # self.caution = Canvas(
+                #     self.loginFrame,
+                #     width=200,
+                #     height=50,
+                #     bd=0,
+                #     bg='#BCC6CC'
+                # )
+                # self.caution.create_text(
+                #     480,
+                #     270,
+                #     text="Please enter the correct info.",
+                #     fill='black',
+                # )
+
+            # print("Username:", self.username_entry.get())
+            # print("Password:", self.pwd_entry.get())
+            # print("Login Successfully!!!")
+            #
+            # self.loginFrame.destroy()
+            # Dashboard(self.root)
