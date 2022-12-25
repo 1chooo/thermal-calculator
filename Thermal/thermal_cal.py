@@ -159,7 +159,8 @@ class ThermalTime:
 
         self.x = np.array([0, 100, 200, 300, 364])
         self.y = np.array(
-            [0, self.sigma_new_mgdd[99],
+            [0,
+             self.sigma_new_mgdd[99],
              self.sigma_new_mgdd[199],
              self.sigma_new_mgdd[299],
              self.sigma_new_mgdd[363]]
@@ -205,6 +206,8 @@ class ThermalTime:
         end_time = self.start_time + timedelta(days=int(np.ceil(self.new_x)))
         print("預計完成日:",end_time.strftime('%Y-%m-%d'))
 
+        return end_time.strftime('%Y-%m-%d')
+
     def plot(self):
 
         x_time = []
@@ -244,12 +247,14 @@ station_code = [
     "B2N890", "72C440"
 ]
 # ThernalTime(start_year, start_month, start_day, station_name, station_code, Tb, theta)
-abc = ThermalTime(2022, 6, 1, '臺中農改', '72G600', 10, 1100)
-abc.deal_TxMaxAbs_data()
-abc.deal_TxMinAbs_data()
-abc.MGDD_list()
-abc.start_day_Tsum()
-abc.fdd_NewtInt()
-abc.output_days()
-abc.print_forecast_harvest_date()
-abc.plot()
+# Tb 農作物基礎溫
+# Theta 積溫
+# abc = ThermalTime(2022, 6, 1, '臺中農改', '72G600', 10, 1100)
+# abc.deal_TxMaxAbs_data()
+# abc.deal_TxMinAbs_data()
+# abc.MGDD_list()
+# abc.start_day_Tsum()
+# abc.fdd_NewtInt()
+# abc.output_days()
+# abc.print_forecast_harvest_date()
+# abc.plot()

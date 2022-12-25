@@ -7,6 +7,21 @@ the second page of the gui.
 from tkinter import *
 from PIL import Image, ImageTk
 from gui.BaseDesk import base
+from Thermal.thermal_cal import ThermalTime
+
+
+"""
+    test import Thermal
+"""
+# abc = ThermalTime(2022, 6, 1, '臺中農改', '72G600', 10, 1100)
+# abc.deal_TxMaxAbs_data()
+# abc.deal_TxMinAbs_data()
+# abc.MGDD_list()
+# abc.start_day_Tsum()
+# abc.fdd_NewtInt()
+# abc.output_days()
+# abc.print_forecast_harvest_date()
+# abc.plot()
 
 
 class Dashboard:
@@ -289,12 +304,24 @@ class Dashboard:
 
         self.__initial_dashboard()
 
+        # self.calculator_frame = Frame(
+        #     self.dashboard_frame,
+        #     width=100, height=100,
+        #     bg="#BCC6CC",
+        # )
+        # self.calculator_frame.place(
+        #     relx=0,
+        #     rely=0,
+        #     relheight=1,
+        #     relwidth=1,
+        # )
+
         self.calculator_canvas = Canvas(
             self.dashboard_frame,
             width=620,
             height=420,
             bd=0,
-            # highlightthickness=0,  # No boarder anymore
+            highlightthickness=0,  # No boarder anymore
             cursor='arrow',
             bg='white'
         )
@@ -307,6 +334,294 @@ class Dashboard:
             font=('Arial', 30, 'bold italic'),
         )
 
+        """
+            Create the year.
+        """
+        self.calculator_canvas.create_text(
+            95,
+            100,
+            text='請輸入想要種植年: ',
+            fill='black',
+            font=('Arial', 12),
+        )
+        self.year_entry = Entry(
+            self.calculator_canvas,
+            bd=0,
+        )
+        self.year_entry.config(
+            bg='white',
+            fg="black",
+        )
+        self.year_entry.place(
+            x=200,
+            y=90,
+            width=70.0,
+            height=20,
+        )
+
+        """
+            Create the month.
+        """
+        self.calculator_canvas.create_text(
+            95,
+            140,
+            text='請輸入想要種植月: ',
+            fill='black',
+            font=('Arial', 12),
+        )
+        self.month_entry = Entry(
+            self.calculator_canvas,
+            bd=0,
+        )
+        self.month_entry.config(
+            bg='white',
+            fg="black",
+        )
+        self.month_entry.place(
+            x=200,
+            y=130,
+            width=70.0,
+            height=20,
+        )
+
+        """
+            Create the day
+        """
+        self.calculator_canvas.create_text(
+            95,
+            180,
+            text='請輸入想要種植日: ',
+            fill='black',
+            font=('Arial', 12),
+        )
+        self.day_entry = Entry(
+            self.calculator_canvas,
+            bd=0,
+        )
+        self.day_entry.config(
+            bg='white',
+            fg="black",
+        )
+        self.day_entry.place(
+            x=200,
+            y=170,
+            width=70.0,
+            height=20,
+        )
+
+        """
+            Create the country
+        """
+        self.calculator_canvas.create_text(
+            95,
+            220,
+            text='請選擇要查詢縣市: ',
+            fill='black',
+            font=('Arial', 12),
+        )
+        self.country_entry = Entry(
+            self.calculator_canvas,
+            bd=0,
+        )
+        self.country_entry.config(
+            bg='white',
+            fg="black",
+        )
+        self.country_entry.place(
+            x=200,
+            y=210,
+            width=70.0,
+            height=20,
+        )
+
+        """
+            Create the standard temperature
+        """
+        self.calculator_canvas.create_text(
+            95,
+            260,
+            text='請輸入作物基礎溫: ',
+            fill='black',
+            font=('Arial', 12),
+        )
+        self.std_tmp_entry = Entry(
+            self.calculator_canvas,
+            bd=0,
+        )
+        self.std_tmp_entry.config(
+            bg='white',
+            fg="black",
+        )
+        self.std_tmp_entry.place(
+            x=200,
+            y=250,
+            width=70.0,
+            height=20,
+        )
+
+        """
+            Create the standard temperature reference
+        """
+        # self.calculator_canvas.create_text(
+        #     200,
+        #     160,
+        #     text='作物積溫參考: ',
+        #     fill='black',
+        #     font=('Arial', 12),
+        # )
+
+        self.thermal_table = Image.open('./assets/imgs/thermal_table.png')
+        self.tk_thermal_table = ImageTk.PhotoImage(self.thermal_table)
+        self.image_data_base.append(self.tk_thermal_table)
+        self.calculator_canvas.create_image(
+            498,
+            85,
+            anchor='center',
+            image=self.image_data_base[6],
+        )
+
+        self.country_table = Image.open('./assets/imgs/country_table.png')
+        self.tk_country_table = ImageTk.PhotoImage(self.country_table)
+        self.image_data_base.append(self.tk_country_table)
+        self.calculator_canvas.create_image(
+            500,
+            285,
+            anchor='center',
+            image=self.image_data_base[7],
+        )
+
+        """
+            Create the thermal
+        """
+        self.calculator_canvas.create_text(
+            89,
+            300,
+            text='請輸入作物積溫: ',
+            fill='black',
+            font=('Arial', 12),
+        )
+        self.thermal_entry = Entry(
+            self.calculator_canvas,
+            bd=0,
+        )
+        self.thermal_entry.config(
+            bg='white',
+            fg="black",
+        )
+        self.thermal_entry.place(
+            x=200,
+            y=290,
+            width=70.0,
+            height=20,
+        )
+
+        """
+            Create the send button
+        """
+        # self.guide_btn_img = Image.open('./assets/imgs/Guide.png')
+        # self.tk_guide_btn_img = ImageTk.PhotoImage(self.guide_btn_img)
+        # self.image_data_base.append(self.tk_guide_btn_img)
+        self.send_btn = Button(
+            self.calculator_canvas,
+            # image=self.image_data_base[1],
+            # width=4,
+            # height=2,
+            bd=0,
+            cursor='mouse',
+            highlightthickness=0,
+            text='send',
+            borderwidth=0,
+            # bg='#98AFC7',
+            command=self.__click_send_btn,
+        )
+        self.calculator_canvas.create_window(
+            150,
+            345,
+            anchor='center',
+            window=self.send_btn,
+        )
+
+        self.calculator_canvas.create_text(
+            111,
+            385,
+            text='計算後估計收成日期: ',
+            fill='black',
+            font=('Arial', 14, 'bold italic'),
+        )
+
+
+    def __click_send_btn(self, ):
+
+        self.station_name_list = [
+            "蘭陽分場", "花蓮農改", "台東茶改",
+            "台中農改", "農業試驗所", "雲林分場",
+            "義竹分場", "高雄農改", "旗南農改",
+            "畜試所", "桃園農改"
+        ]
+        self.station_code_list = [
+            "72U480", "72T250", "82S580",
+            "72G600", "G2F820", "72K220",
+            "72M360", "72Q010", "72V140",
+            "B2N890", "72C440"
+        ]
+
+        print("The send button has been clicked!!!")
+
+        self.year = self.year_entry.get()
+        self.month = self.month_entry.get()
+        self.day = self.day_entry.get()
+        self.country = self.country_entry.get()
+        self.std_tmp = self.std_tmp_entry.get()
+        self.thermal = self.thermal_entry.get()
+
+        if self.country == "宜蘭":
+            self.pivot = 0
+        elif self.country == "花蓮":
+            self.pivot = 1
+        elif self.country == "台東":
+            self.pivot = 2
+        elif self.country == "彰化":
+            self.pivot = 3
+        elif self.country == "台中":
+            self.pivot = 4
+        elif self.country == "雲林":
+            self.pivot = 5
+        elif self.country == "嘉義":
+            self.pivot = 6
+        elif self.country == "高雄":
+            self.pivot = 8
+        elif self.country == "台南":
+            self.pivot = 9
+        elif self.country == "桃園":
+            self.pivot = 10
+
+        self.result = ThermalTime(
+            int(self.year),
+            int(self.month),
+            int(self.day),
+            self.station_name_list[self.pivot],
+            self.station_code_list[self.pivot],
+            int(self.std_tmp),
+            int(self.thermal),
+        )
+        self.result.deal_TxMaxAbs_data()
+        self.result.deal_TxMinAbs_data()
+        self.result.MGDD_list()
+        self.result.start_day_Tsum()
+        self.result.fdd_NewtInt()
+        self.result.output_days()
+        self.result.print_forecast_harvest_date()
+        self.result_text = self.result.print_forecast_harvest_date()
+        # print(self.result_text)
+        # self.result.plot()
+        self.calculator_canvas.create_text(
+            230,
+            385,
+            text=self.result_text,
+            fill='black',
+            font=('Arial', 14, 'bold italic'),
+        )
+        # abc = ThermalTime(2022, 6, 1, '臺中農改', '72G600', 10, 1100)
 
     def __click_about_us(self, ):
 
@@ -351,7 +666,19 @@ class Dashboard:
         except:
 
             print("no canvas to delete")
-            # pass
+
+
+    def __build_table(self, ):
+
+        self.thermal_list = [
+            ( '作物', '基礎溫度',   '積溫'),
+            ( '水稻',     '10℃', '2800℃'),
+            ( '玉米',      '8℃', '2500℃'),
+            ( '棉花',     '13℃', '3400℃'),
+            ('馬鈴薯',     '5℃', '1400℃'),
+            ( '小麥',      '4℃', '1700℃'),
+        ]
+
 
     def __logoutFunc(self):
 

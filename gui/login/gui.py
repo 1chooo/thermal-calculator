@@ -1,6 +1,8 @@
 from tkinter import *
 from PIL import Image, ImageTk
 
+from gui.Dashboard.dashboard import Dashboard
+
 
 class LoginFrame:
 
@@ -120,10 +122,49 @@ class LoginFrame:
             height=30,
         )
 
-    def loginFunc(self):
+    def __loginFunc(self, ):
+
+        print("The login button has been clicked!!!")
 
         if self.username_entry.get() != '':
-            print("Username:", self.username_entry.get())
-            print("Password:", self.pwd_entry.get())
 
-        print("Login Successfully!!!")
+            if self.username_entry.get() == "admin" and self.pwd_entry.get() == "admin":
+
+                print("Username:", self.username_entry.get())
+                print("Password:", self.pwd_entry.get())
+                print("Login Successfully!!!")
+
+                # self.loginFrame.destroy()
+                Dashboard(self.root)
+
+            else:
+
+                print("Username:", self.username_entry.get())
+                print("Password:", self.pwd_entry.get())
+
+                print("This user are not in our data base!!!")
+
+                """
+                    Wish List:
+                    Maybe we can add the caution to the user.
+                """
+                # self.caution = Canvas(
+                #     self.loginFrame,
+                #     width=200,
+                #     height=50,
+                #     bd=0,
+                #     bg='#BCC6CC'
+                # )
+                # self.caution.create_text(
+                #     480,
+                #     270,
+                #     text="Please enter the correct info.",
+                #     fill='black',
+                # )
+
+            # print("Username:", self.username_entry.get())
+            # print("Password:", self.pwd_entry.get())
+            # print("Login Successfully!!!")
+            #
+            # self.loginFrame.destroy()
+            # Dashboard(self.root)
