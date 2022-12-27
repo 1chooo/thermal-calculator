@@ -93,3 +93,7 @@ Python 3.10.1
 ](https://www.youtube.com/watch?v=KV3SPTt1WWs)
 * Menu
   * [Tkinter Menu](https://www.pythontutorial.net/tkinter/tkinter-menu/)
+
+### LICENSE
+
+[MIT License](https://github.com/1chooo/Tkinter-gui/blob/721c9621faf12d6a30dfb3cf5c1872650b8888c4/LICENSE)
