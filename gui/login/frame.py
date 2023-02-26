@@ -80,7 +80,7 @@ class LoginFrame:
         """
             Add image to the background
         """
-        self.bg_img = Image.open('./assets/imgs/Login.jpg')
+        self.bg_img = Image.open('./assets/imgs/Login.png')
         print(self.bg_img)
         self.tk_bg_img = ImageTk.PhotoImage(self.bg_img)
         print(self.tk_bg_img)
