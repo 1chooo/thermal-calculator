@@ -29,21 +29,20 @@
 ### Python Environment
 
 ``` shell
-❯ $ python3 --version 
-Python 3.10.1
-
-❯ $ pip3 install requests
-❯ $ pip3 install tk
-❯ $ pip3 install numpy
-❯ $ pip3 install matplotlib
+$ pip3 install virtualenv
+$ virtualenv venv --python=python3.10.1
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+$ deactivate
+$ rm -rf venv     # remove the venv
 ```
 
 ### How to use this? (clone with ssh)
 
 ``` shell
-❯ $ git clone git@github.com:1chooo/Tkinter-gui.git
-❯ $ cd Tkinter-gui
-❯ $ python3 main.py
+$ git clone git@github.com:1chooo/Tkinter-gui.git
+$ cd Tkinter-gui
+$ python3 main.py
 ```
 
 ### Demo
