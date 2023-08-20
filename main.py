@@ -1,18 +1,12 @@
-"""
-This test is successfully to call the package
-and distribute all the file in different files
-and the different files, then some functions
-may in the different types of entrance.
-"""
+# -*- coding: utf-8 -*-
+'''
+Create Date: 2023/08/19
+Author: @1chooo(Hugo ChunHo Lin)
+Version: v0.0.2
+'''
 
-
-from tkinter import *
-from gui.BaseDesk import base
-
-
-root = Tk()
+from Thermal.app.app import main
 
 if __name__ == "__main__":
 
-    base.init_base(root)
-    root.mainloop()
+    main()
