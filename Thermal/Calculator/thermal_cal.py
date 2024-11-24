@@ -1,7 +1,7 @@
 import csv
 import requests
 import numpy as np
-from datetime import datetime, timedelta
+from datetime import timedelta
 import matplotlib.pyplot as plt
 import matplotlib.dates as dates
 import matplotlib.ticker as ticker
@@ -58,7 +58,7 @@ class ThermalTime:
                 item = 0
                 tmp_sum = 0.
                 for i in range(len(data)):
-                    if data[i][j][k] != 0.:
+                    if not np.isclose(data[i][j][k], 0.):
                         item += 1
                         tmp_sum += data[i][j][k]
                         # print(data[i][j][k])
@@ -103,7 +103,7 @@ class ThermalTime:
                 item = 0
                 tmp_sum = 0.
                 for i in range(len(data)):
-                    if data[i][j][k] != 0.:
+                    if not np.isclose(data[i][j][k], 0.):
                         item += 1
                         tmp_sum += data[i][j][k]
                         # print(data[i][j][k])
@@ -121,7 +121,7 @@ class ThermalTime:
         mgdd = []
         for i in range(12):
             for j in range(31):
-                if self.T_max[i][j] == 0.:
+                if np.isclose(self.T_max[i][j], 0.):
                     continue
                 elif i == 1 and j == 28:
                     continue
@@ -246,15 +246,18 @@ station_code = [
     "72M360", "72Q010", "72V140",
     "B2N890", "72C440"
 ]
-# ThernalTime(start_year, start_month, start_day, station_name, station_code, Tb, theta)
-# Tb 農作物基礎溫
-# Theta 積溫
-# abc = ThermalTime(2022, 6, 1, '臺中農改', '72G600', 10, 1100)
-# abc.deal_TxMaxAbs_data()
-# abc.deal_TxMinAbs_data()
-# abc.MGDD_list()
-# abc.start_day_Tsum()
-# abc.fdd_NewtInt()
-# abc.output_days()
-# abc.print_forecast_harvest_date()
-# abc.plot()
+
+if __name__ == '__main__':
+
+    # ThernalTime(start_year, start_month, start_day, station_name, station_code, Tb, theta)
+    # Tb 農作物基礎溫
+    # Theta 積溫
+    abc = ThermalTime(2022, 6, 1, '臺中農改', '72G600', 10, 1100)
+    abc.deal_TxMaxAbs_data()
+    abc.deal_TxMinAbs_data()
+    abc.MGDD_list()
+    abc.start_day_Tsum()
+    abc.fdd_NewtInt()
+    abc.output_days()
+    abc.print_forecast_harvest_date()
+    abc.plot()
