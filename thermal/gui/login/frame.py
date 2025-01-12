@@ -7,7 +7,7 @@ to detect the username and the admin.
 
 from tkinter import *
 from PIL import Image, ImageTk
-from thermal.gui.dashboard.dashboard import Dashboard
+from thermal.gui.dashboard import Dashboard
 
 
 class LoginFrame:
