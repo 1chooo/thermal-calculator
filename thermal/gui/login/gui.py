@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Frame, Canvas, Button, Entry, TOP, W
 from PIL import Image, ImageTk
 
 from thermal.gui.dashboard import Dashboard
