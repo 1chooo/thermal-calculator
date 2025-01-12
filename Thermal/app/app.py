@@ -1,5 +1,6 @@
-from tkinter import *
+from tkinter import Tk
 from Thermal.tk_gui.BaseDesk import base
+
 
 def main() -> None:
     root = Tk()

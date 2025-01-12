@@ -565,8 +565,6 @@ class Dashboard:
             "B2N890", "72C440"
         ]
 
-        print("The send button has been clicked!!!")
-
         self.year = self.year_entry.get()
         self.month = self.month_entry.get()
         self.day = self.day_entry.get()
