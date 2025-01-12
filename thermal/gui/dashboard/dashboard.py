@@ -6,8 +6,8 @@ the second page of the gui.
 
 from tkinter import *
 from PIL import Image, ImageTk
-from Thermal2.tk_gui.BaseDesk import base
-from Thermal2.Calculator.thermal_cal import ThermalTime
+from thermal.gui.base_desk import base
+from thermal.calculator.thermal_cal import ThermalTime
 
 
 """

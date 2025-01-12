@@ -5,7 +5,7 @@ Author: @1chooo(Hugo ChunHo Lin)
 Version: v0.0.2
 '''
 
-from Thermal2.app.app import main
+from thermal.app.app import main
 
 if __name__ == "__main__":
 

@@ -1,7 +1,7 @@
 from tkinter import *
 from PIL import Image, ImageTk
 
-from Thermal2.tk_gui.Dashboard.dashboard import Dashboard
+from thermal.gui.dashboard.dashboard import Dashboard
 
 
 class LoginFrame:

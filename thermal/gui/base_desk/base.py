@@ -1,5 +1,5 @@
 from tkinter import *
-from Thermal2.tk_gui.Login.frame import LoginFrame
+from thermal.gui.login.frame import LoginFrame
 
 
 def init_base(root):

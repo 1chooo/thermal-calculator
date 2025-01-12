@@ -1,5 +1,5 @@
 from tkinter import Tk
-from Thermal2.tk_gui.BaseDesk import base
+from thermal.gui.base_desk import base
 
 
 def main() -> None:
