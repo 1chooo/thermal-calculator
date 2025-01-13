@@ -1,11 +1,10 @@
 import csv
 import requests
-import pandas as pd
 
-CSV_URL = 'https://agr.cwb.gov.tw/NAGR/history/station_day/create_report?station=K2E360&start_time=2017-01-01&end_time=2021-12-31&items=TxMaxAbs&report_type=csv&level=新農業站'
+csv_url = 'https://agr.cwb.gov.tw/NAGR/history/station_day/create_report?station=K2E360&start_time=2017-01-01&end_time=2021-12-31&items=TxMaxAbs&report_type=csv&level=新農業站'
 
 with requests.Session() as s:
-    download = s.get(CSV_URL)
+    download = s.get(csv_url)
 
     decoded_content = download.content.decode('utf-8', "ignore")
 

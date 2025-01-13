@@ -10,7 +10,14 @@ import matplotlib.ticker as ticker
 
 class ThermalTime:
     def __init__(
-        self, start_year, start_month, start_day, station_name, station_code, tb, theta
+        self, 
+        start_year, 
+        start_month, 
+        start_day, 
+        station_name, 
+        station_code, 
+        tb, 
+        theta,
     ):
         self.start_year = start_year
         self.start_month = start_month
@@ -21,10 +28,10 @@ class ThermalTime:
         self.theta = theta
 
     def deal_tx_max_abs_data(self):
-        CSV_URL = f"https://agr.cwb.gov.tw/NAGR/history/station_day/create_report?station={self.station_code}&start_time=2017-01-01&end_time=2021-12-31&items=TxMaxAbs&report_type=csv&level={self.station_name}"
+        csv_url = f"https://agr.cwb.gov.tw/NAGR/history/station_day/create_report?station={self.station_code}&start_time=2017-01-01&end_time=2021-12-31&items=TxMaxAbs&report_type=csv&level={self.station_name}"
 
         with requests.Session() as s:
-            download = s.get(CSV_URL)
+            download = s.get(csv_url)
             decoded_content = download.content.decode("utf-8", "ignore")
             cr = csv.reader(decoded_content.splitlines(), delimiter=",")
             my_list = list(cr)
@@ -88,10 +95,10 @@ class ThermalTime:
         self.T_max = data_mean
 
     def deal_TxMinAbs_data(self):
-        CSV_URL = f"https://agr.cwb.gov.tw/NAGR/history/station_day/create_report?station={self.station_code}&start_time=2017-01-01&end_time=2021-12-31&items=TxMinAbs&report_type=csv&level={self.station_name}"
+        csv_url = f"https://agr.cwb.gov.tw/NAGR/history/station_day/create_report?station={self.station_code}&start_time=2017-01-01&end_time=2021-12-31&items=TxMinAbs&report_type=csv&level={self.station_name}"
 
         with requests.Session() as s:
-            download = s.get(CSV_URL)
+            download = s.get(csv_url)
             decoded_content = download.content.decode("utf-8", "ignore")
             cr = csv.reader(decoded_content.splitlines(), delimiter=",")
             my_list = list(cr)
