@@ -9,20 +9,6 @@ from thermal.gui.base_desk import base
 from thermal.calculator.thermal_cal import ThermalTime
 
 
-"""
-    test import Thermal
-"""
-# abc = ThermalTime(2022, 6, 1, '臺中農改', '72G600', 10, 1100)
-# abc.deal_tx_max_abs_data()
-# abc.deal_TxMinAbs_data()
-# abc.mgdd_list()
-# abc.start_day_Tsum()
-# abc.fdd_NewtInt()
-# abc.output_days()
-# abc.print_forecast_harvest_date()
-# abc.plot()
-
-
 class Dashboard:
     image_data_base = []
     bg = "#98AFC7"
