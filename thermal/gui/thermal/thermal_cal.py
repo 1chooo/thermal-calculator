@@ -92,7 +92,7 @@ class ThermalTime:
                     data_mean[j][k] = tmp_sum / item
                 else:
                     pass
-        self.T_max = data_mean
+        self.t_max = data_mean
 
     def deal_TxMinAbs_data(self):
         csv_url = f"https://agr.cwb.gov.tw/NAGR/history/station_day/create_report?station={self.station_code}&start_time=2017-01-01&end_time=2021-12-31&items=TxMinAbs&report_type=csv&level={self.station_name}"
@@ -165,12 +165,12 @@ class ThermalTime:
         mgdd = []
         for i in range(12):
             for j in range(31):
-                if np.isclose(self.T_max[i][j], 0.0):
+                if np.isclose(self.t_max[i][j], 0.0):
                     continue
                 elif i == 1 and j == 28:
                     continue
-                if abs(self.T_max[i][j] - 30.0) < 1e-9:
-                    tmax = self.T_max[i][j]
+                if abs(self.t_max[i][j] - 30.0) < 1e-9:
+                    tmax = self.t_max[i][j]
                 else:
                     tmax = 30.0
                 if self.T_min[i][j] >= self.tb:
