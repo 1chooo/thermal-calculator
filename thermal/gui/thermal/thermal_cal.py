@@ -10,13 +10,13 @@ import matplotlib.ticker as ticker
 
 class ThermalTime:
     def __init__(
-        self, 
-        start_year, 
-        start_month, 
-        start_day, 
-        station_name, 
-        station_code, 
-        tb, 
+        self,
+        start_year,
+        start_month,
+        start_day,
+        station_name,
+        station_code,
+        tb,
         theta,
     ):
         self.start_year = start_year
@@ -86,12 +86,8 @@ class ThermalTime:
                     if not np.isclose(data[i][j][k], 0.0):
                         item += 1
                         tmp_sum += data[i][j][k]
-                    else:
-                        pass
                 if item != 0:
                     data_mean[j][k] = tmp_sum / item
-                else:
-                    pass
         self.t_max = data_mean
 
     def deal_TxMinAbs_data(self):
@@ -153,12 +149,8 @@ class ThermalTime:
                     if not np.isclose(data[i][j][k], 0.0):
                         item += 1
                         tmp_sum += data[i][j][k]
-                    else:
-                        pass
                 if item != 0:
                     data_mean[j][k] = tmp_sum / item
-                else:
-                    pass
         self.T_min = data_mean
 
     def MGDD_list(self):

@@ -79,12 +79,8 @@ class ThermalTime:
                         item += 1
                         tmp_sum += data[i][j][k]
                         # print(data[i][j][k])
-                    else:
-                        pass
                 if item != 0:
                     data_mean[j][k] = tmp_sum / item
-                else:
-                    pass
         self.t_max = data_mean
 
     def deal_TxMinAbs_data(self):
@@ -147,12 +143,8 @@ class ThermalTime:
                         item += 1
                         tmp_sum += data[i][j][k]
                         # print(data[i][j][k])
-                    else:
-                        pass
                 if item != 0:
                     data_mean[j][k] = tmp_sum / item
-                else:
-                    pass
         self.T_min = data_mean
 
     def MGDD_list(self):
