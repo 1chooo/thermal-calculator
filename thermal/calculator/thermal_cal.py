@@ -155,7 +155,7 @@ class ThermalTime:
                     data_mean[j][k] = tmp_sum / item
         self.t_min = data_mean
 
-    def MGDD_list(self):
+    def mgdd_list(self):
         import numpy as np
 
         mgdd = []
@@ -306,7 +306,7 @@ if __name__ == "__main__":
     abc = ThermalTime(2022, 6, 1, "臺中農改", "72G600", 10, 1100)
     abc.deal_tx_max_abs_data()
     abc.deal_TxMinAbs_data()
-    abc.MGDD_list()
+    abc.mgdd_list()
     abc.start_day_Tsum()
     abc.fdd_NewtInt()
     abc.output_days()
