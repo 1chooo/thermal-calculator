@@ -153,7 +153,7 @@ class ThermalTime:
                         # print(data[i][j][k])
                 if item != 0:
                     data_mean[j][k] = tmp_sum / item
-        self.T_min = data_mean
+        self.t_min = data_mean
 
     def MGDD_list(self):
         import numpy as np
@@ -169,8 +169,8 @@ class ThermalTime:
                     tmax = self.t_max[i][j]
                 else:
                     tmax = 30.0
-                if self.T_min[i][j] >= self.Tb:
-                    tmin = self.T_min[i][j]
+                if self.t_min[i][j] >= self.Tb:
+                    tmin = self.t_min[i][j]
                 else:
                     tmin = self.Tb
                 T = (tmax + tmin) / 2
