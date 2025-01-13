@@ -13,7 +13,7 @@ from thermal.calculator.thermal_cal import ThermalTime
     test import Thermal
 """
 # abc = ThermalTime(2022, 6, 1, '臺中農改', '72G600', 10, 1100)
-# abc.deal_TxMaxAbs_data()
+# abc.deal_tx_max_abs_data()
 # abc.deal_TxMinAbs_data()
 # abc.MGDD_list()
 # abc.start_day_Tsum()
@@ -615,7 +615,7 @@ class Dashboard:
             int(self.std_tmp),
             int(self.thermal),
         )
-        self.result.deal_TxMaxAbs_data()
+        self.result.deal_tx_max_abs_data()
         self.result.deal_TxMinAbs_data()
         self.result.MGDD_list()
         self.result.start_day_Tsum()

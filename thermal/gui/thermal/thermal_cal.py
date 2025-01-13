@@ -20,7 +20,7 @@ class ThermalTime:
         self.tb = tb
         self.theta = theta
 
-    def deal_TxMaxAbs_data(self):
+    def deal_tx_max_abs_data(self):
         CSV_URL = f"https://agr.cwb.gov.tw/NAGR/history/station_day/create_report?station={self.station_code}&start_time=2017-01-01&end_time=2021-12-31&items=TxMaxAbs&report_type=csv&level={self.station_name}"
 
         with requests.Session() as s:
@@ -300,7 +300,7 @@ if __name__ == "__main__":
     # tb 農作物基礎溫
     # Theta 積溫
     abc = ThermalTime(2022, 6, 1, "臺中農改", "72G600", 10, 1100)
-    abc.deal_TxMaxAbs_data()
+    abc.deal_tx_max_abs_data()
     abc.deal_TxMinAbs_data()
     abc.MGDD_list()
     abc.start_day_Tsum()
