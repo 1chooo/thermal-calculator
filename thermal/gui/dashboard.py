@@ -681,7 +681,8 @@ class Dashboard:
 
 
 class ImageProgressing:
-    # def __init__(self) -> None:
+    def __init__(self) -> None:
+        return
 
     def __create_canvas(self, width_, height_) -> None:
         self.canvas = Canvas(
