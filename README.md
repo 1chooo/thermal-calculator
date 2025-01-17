@@ -12,9 +12,9 @@
 
 | Name | Student Number | Divide and Conquer       |
 |------|----------------|--------------------------|
-| 林群賀  | 109601003      | Data   Scratch           |
-| 洪晨哲  | 109601002      | Main Function            |
-| 孫維辰  | 109601517      | GUI and Data pre-solving |
+| 林群賀  | 109601003    | GUI and Data Scratch     |
+| 洪晨哲  | 109601002    | Numerical Method         |
+| 孫維辰  | 109601517    | Data pre-solving         |
 
 ### Motivation
 

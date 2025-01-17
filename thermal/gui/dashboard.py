@@ -645,9 +645,7 @@ class Dashboard:
         self.about_us_canvas.create_text(
             215,
             140,
-            text="Data: 孫維辰（資料尋搜者）\n\n"
-            "Program: 洪晨哲（接水大掌門）\n\n"
-            "Graphic User interface & data pre-solving: 林群賀（排水大將軍)",
+            text="Data pre-solving: 孫維辰（資料尋搜者）\n\nNumerical Method: 洪晨哲（接水大掌門）\n\nGUI and Data Scratch: 林群賀（排水大將軍)",
             fill="black",
             font=("Arial", 12),
         )
