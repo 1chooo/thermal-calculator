@@ -602,7 +602,7 @@ class Dashboard:
             int(self.thermal),
         )
         self.result.deal_tx_max_abs_data()
-        self.result.deal_TxMinAbs_data()
+        self.result.deal_tx_min_abs_data()
         self.result.mgdd_list()
         self.result.start_day_Tsum()
         self.result.fdd_NewtInt()
