@@ -184,7 +184,7 @@ class ThermalTime:
             sigma_new_mgdd.append(tsum)
         self.sigma_new_mgdd = sigma_new_mgdd
 
-    def fdd_NewtInt(self):
+    def fdd_newton_interpolation(self):
         self.x = np.array([0, 100, 200, 300, 364])
         self.y = np.array(
             [
@@ -303,7 +303,7 @@ if __name__ == "__main__":
     abc.deal_tx_min_abs_data()
     abc.mgdd_list()
     abc.start_day_temperature_sum()
-    abc.fdd_NewtInt()
+    abc.fdd_newton_interpolation()
     abc.output_days()
     abc.print_forecast_harvest_date()
     abc.plot()
