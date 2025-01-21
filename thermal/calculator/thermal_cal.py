@@ -255,7 +255,7 @@ class ThermalTime:
             x_time.append(time)  # .strftime('%Y-%m-%d'))
             time += timedelta(days=1)
 
-        fig, ax = plt.subplots()
+        _, ax = plt.subplots()
         ax.plot(x_time, self.sigma_new_mgdd)
 
         ax.xaxis.set_major_locator(dates.MonthLocator())
