@@ -169,12 +169,12 @@ class ThermalTime:
                     tmax = self.t_max[i][j]
                 else:
                     tmax = 30.0
-                if self.t_min[i][j] >= self.Tb:
+                if self.t_min[i][j] >= self.tb:
                     tmin = self.t_min[i][j]
                 else:
-                    tmin = self.Tb
+                    tmin = self.tb
                 T = (tmax + tmin) / 2
-                mgdd.append(T - self.Tb)
+                mgdd.append(T - self.tb)
         self.mgdd = mgdd
 
     def start_day_Tsum(self):
@@ -300,8 +300,8 @@ if __name__ == "__main__":
         "72C440",
     ]
 
-    # ThernalTime(start_year, start_month, start_day, station_name, station_code, Tb, theta)
-    # Tb 農作物基礎溫
+    # ThernalTime(start_year, start_month, start_day, station_name, station_code, tb, theta)
+    # tb 農作物基礎溫
     # Theta 積溫
     abc = ThermalTime(2022, 6, 1, "臺中農改", "72G600", 10, 1100)
     abc.deal_tx_max_abs_data()
