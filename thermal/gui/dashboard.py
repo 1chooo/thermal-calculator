@@ -604,7 +604,7 @@ class Dashboard:
         self.result.deal_tx_max_abs_data()
         self.result.deal_tx_min_abs_data()
         self.result.mgdd_list()
-        self.result.start_day_Tsum()
+        self.result.start_day_temperature_sum()
         self.result.fdd_NewtInt()
         self.result.output_days()
         self.result.print_forecast_harvest_date()

@@ -167,7 +167,7 @@ class ThermalTime:
                 mgdd.append(T - self.tb)
         self.mgdd = mgdd
 
-    def start_day_Tsum(self):
+    def start_day_temperature_sum(self):
         self.start_time = datetime(self.start_year, self.start_month, self.start_day)
         delta_days = (self.start_time - datetime(self.start_year, 1, 1)).days
         new_mgdd = self.mgdd[delta_days:] + self.mgdd[:delta_days]
@@ -291,7 +291,7 @@ abc = ThermalTime(2022, 6, 1, "臺中農改", "72G600", 10, 1100)
 abc.deal_tx_max_abs_data()
 abc.deal_tx_min_abs_data()
 abc.mgdd_list()
-abc.start_day_Tsum()
+abc.start_day_temperature_sum()
 abc.fdd_NewtInt()
 abc.output_days()
 abc.print_forecast_harvest_date()
