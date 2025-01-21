@@ -239,7 +239,7 @@ class ThermalTime:
     def plot(self):
         x_time = []
         time = self.start_time
-        for i in range(len(self.sigma_new_mgdd)):
+        for _ in range(len(self.sigma_new_mgdd)):
             x_time.append(time)  # .strftime('%Y-%m-%d'))
             time += timedelta(days=1)
 
