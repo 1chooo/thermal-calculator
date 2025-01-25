@@ -252,7 +252,7 @@ class Dashboard:
             width=620,
             height=420,
             bd=0,
-            highlightthickness=0,  # No boarder anymore
+            highlightthickness=0,
             cursor="arrow",
             bg="white",
         )
@@ -290,24 +290,12 @@ class Dashboard:
     ):
         self.__initial_dashboard()
 
-        # self.calculator_frame = Frame(
-        #     self.dashboard_frame,
-        #     width=100, height=100,
-        #     bg="#BCC6CC",
-        # )
-        # self.calculator_frame.place(
-        #     relx=0,
-        #     rely=0,
-        #     relheight=1,
-        #     relwidth=1,
-        # )
-
         self.calculator_canvas = Canvas(
             self.dashboard_frame,
             width=620,
             height=420,
             bd=0,
-            highlightthickness=0,  # No boarder anymore
+            highlightthickness=0,
             cursor="arrow",
             bg="white",
         )
@@ -420,9 +408,7 @@ class Dashboard:
             height=20,
         )
 
-        """
-            Create the standard temperature
-        """
+        # Create the standard temperature
         self.calculator_canvas.create_text(
             95,
             260,
@@ -445,16 +431,7 @@ class Dashboard:
             height=20,
         )
 
-        """
-            Create the standard temperature reference
-        """
-        # self.calculator_canvas.create_text(
-        #     200,
-        #     160,
-        #     text='作物積溫參考: ',
-        #     fill='black',
-        #     font=('Arial', 12),
-        # )
+        # Create the standard temperature reference
 
         self.thermal_table = Image.open("./assets/imgs/thermal_table.png")
         self.tk_thermal_table = ImageTk.PhotoImage(self.thermal_table)
@@ -476,9 +453,7 @@ class Dashboard:
             image=self.image_data_base[7],
         )
 
-        """
-            Create the thermal
-        """
+        # Create the thermal
         self.calculator_canvas.create_text(
             89,
             300,
@@ -501,23 +476,14 @@ class Dashboard:
             height=20,
         )
 
-        """
-            Create the send button
-        """
-        # self.guide_btn_img = Image.open('./assets/imgs/Guide.png')
-        # self.tk_guide_btn_img = ImageTk.PhotoImage(self.guide_btn_img)
-        # self.image_data_base.append(self.tk_guide_btn_img)
+        # Create the send button
         self.send_btn = Button(
             self.calculator_canvas,
-            # image=self.image_data_base[1],
-            # width=4,
-            # height=2,
             bd=0,
             cursor="mouse",
             highlightthickness=0,
             text="send",
             borderwidth=0,
-            # bg='#98AFC7',
             command=self.__click_send_btn,
         )
         self.calculator_canvas.create_window(
@@ -610,8 +576,6 @@ class Dashboard:
         self.result.output_days()
         self.result.print_forecast_harvest_date()
         self.result_text = self.result.print_forecast_harvest_date()
-        # print(self.result_text)
-        # self.result.plot()
         self.calculator_canvas.create_text(
             230,
             385,
@@ -619,7 +583,6 @@ class Dashboard:
             fill="black",
             font=("Arial", 14, self.font),
         )
-        # abc = ThermalTime(2022, 6, 1, '臺中農改', '72G600', 10, 1100)
 
     def __click_about_us(
         self,
@@ -631,7 +594,7 @@ class Dashboard:
             width=620,
             height=420,
             bd=0,
-            highlightthickness=0,  # No boarder anymore
+            highlightthickness=0,
             cursor="arrow",
             bg="white",
         )

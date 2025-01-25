@@ -37,7 +37,6 @@ class ThermalTime:
             my_list = list(cr)
             i = 1
             df = []
-            # print(f"{station_code} 2017-01-01 to 2021-12-31 {report_items}\n")
             for row in my_list:
                 jump = [
                     1,
@@ -295,9 +294,6 @@ station_code = [
 ]
 
 if __name__ == "__main__":
-    # ThernalTime(start_year, start_month, start_day, station_name, station_code, tb, theta)
-    # tb 農作物基礎溫
-    # Theta 積溫
     abc = ThermalTime(2022, 6, 1, "臺中農改", "72G600", 10, 1100)
     abc.deal_tx_max_abs_data()
     abc.deal_tx_min_abs_data()

@@ -37,7 +37,6 @@ class ThermalTime:
             my_list = list(cr)
             i = 1
             df = []
-            # print(f"{station_code} 2017-01-01 to 2021-12-31 {report_items}\n")
             for row in my_list:
                 jump = [
                     1,
@@ -101,7 +100,6 @@ class ThermalTime:
             my_list = list(cr)
             i = 1
             df = []
-            # print(f"{station_code} 2017-01-01 to 2021-12-31 {report_items}\n")
             for row in my_list:
                 jump = [
                     1,
@@ -150,14 +148,11 @@ class ThermalTime:
                     if not np.isclose(data[i][j][k], 0.0):
                         item += 1
                         tmp_sum += data[i][j][k]
-                        # print(data[i][j][k])
                 if item != 0:
                     data_mean[j][k] = tmp_sum / item
         self.t_min = data_mean
 
     def mgdd_list(self):
-        import numpy as np
-
         mgdd = []
         for i in range(12):
             for j in range(31):
@@ -186,7 +181,6 @@ class ThermalTime:
         for i in range(len(new_mgdd)):
             tsum += new_mgdd[i]
             sigma_new_mgdd.append(tsum)
-        # print(sigma_new_mgdd)
         self.sigma_new_mgdd = sigma_new_mgdd
 
     def fdd_newton_interpolation(self):
@@ -300,9 +294,6 @@ if __name__ == "__main__":
         "72C440",
     ]
 
-    # ThernalTime(start_year, start_month, start_day, station_name, station_code, tb, theta)
-    # tb 農作物基礎溫
-    # Theta 積溫
     abc = ThermalTime(2022, 6, 1, "臺中農改", "72G600", 10, 1100)
     abc.deal_tx_max_abs_data()
     abc.deal_tx_min_abs_data()
