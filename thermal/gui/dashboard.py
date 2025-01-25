@@ -14,6 +14,7 @@ class Dashboard:
     bg = "#98AFC7"
     title = "Dashboard"
     geometry = "960x540"
+    font = "bold italic"
 
     def __init__(self, master) -> None:
         self.root = master
@@ -198,7 +199,7 @@ class Dashboard:
             40,
             text="積溫介紹",
             fill="black",
-            font=("Arial", 30, "bold italic"),
+            font=("Arial", 30, self.font),
         )
         self.background_canvas.create_text(
             310,
@@ -261,7 +262,7 @@ class Dashboard:
             40,
             text="專案導覽",
             fill="black",
-            font=("Arial", 30, "bold italic"),
+            font=("Arial", 30, self.font),
         )
         self.guide_canvas.create_text(
             315,
@@ -316,7 +317,7 @@ class Dashboard:
             40,
             text="積溫計算機",
             fill="black",
-            font=("Arial", 30, "bold italic"),
+            font=("Arial", 30, self.font),
         )
 
         """
@@ -531,7 +532,7 @@ class Dashboard:
             385,
             text="計算後估計收成日期: ",
             fill="black",
-            font=("Arial", 14, "bold italic"),
+            font=("Arial", 14, self.font),
         )
 
     def __click_send_btn(
@@ -616,7 +617,7 @@ class Dashboard:
             385,
             text=self.result_text,
             fill="black",
-            font=("Arial", 14, "bold italic"),
+            font=("Arial", 14, self.font),
         )
         # abc = ThermalTime(2022, 6, 1, '臺中農改', '72G600', 10, 1100)
 
@@ -640,7 +641,7 @@ class Dashboard:
             40,
             text="關於我們",
             fill="black",
-            font=("Arial", 30, "bold italic"),
+            font=("Arial", 30, self.font),
         )
         self.about_us_canvas.create_text(
             215,
