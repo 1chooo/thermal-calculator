@@ -83,12 +83,10 @@ class LoginFrame:
         self.tk_btn_img = ImageTk.PhotoImage(self.btn_img)
         self.btn = Button(
             self.loginFrame,
-            # text='Login',
             command=self.__loginFunc,
             image=self.tk_btn_img,
             bd=0,
             cursor="mouse",
-            # bg="#BCC6CC",
         )
         self.canvas.create_window(
             720,
