@@ -625,18 +625,6 @@ class Dashboard:
         except AttributeError:
             print("no canvas to delete")
 
-    def __build_table(
-        self,
-    ):
-        self.thermal_list = [
-            ("作物", "基礎溫度", "積溫"),
-            ("水稻", "10℃", "2800℃"),
-            ("玉米", "8℃", "2500℃"),
-            ("棉花", "13℃", "3400℃"),
-            ("馬鈴薯", "5℃", "1400℃"),
-            ("小麥", "4℃", "1700℃"),
-        ]
-
     def __logoutFunc(self):
         self.dashboard_frame.destroy()
         base.init_base(self.root)
