@@ -34,11 +34,11 @@ class LoginFrame:
         """
             Create the lower Frame in the window
         """
-        self.loginFrame = Frame(
+        self.login_frame = Frame(
             self.root,
             bg="#BCC6CC",
         )
-        self.loginFrame.place(
+        self.login_frame.place(
             relx=0,
             rely=0,
             relheight=1,
@@ -49,7 +49,7 @@ class LoginFrame:
             Add the canvas layer on the lower Frame
         """
         self.canvas = Canvas(
-            self.loginFrame,
+            self.login_frame,
             width=960,
             height=540,
             bd=0,
@@ -82,7 +82,7 @@ class LoginFrame:
         self.btn_img = Image.open("./assets/imgs/Login_btn.png")
         self.tk_btn_img = ImageTk.PhotoImage(self.btn_img)
         self.btn = Button(
-            self.loginFrame,
+            self.login_frame,
             command=self.__loginFunc,
             image=self.tk_btn_img,
             bd=0,
